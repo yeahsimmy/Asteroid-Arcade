@@ -1,0 +1,95 @@
+:root {
+  --bg: #070b14;
+  --panel: #111a2f;
+  --line: #69f1d6;
+  --text: #e5f2ff;
+  --accent: #ffcf78;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #141f40, transparent 32%),
+    radial-gradient(circle at 80% 10%, #27163f, transparent 28%),
+    var(--bg);
+  color: var(--text);
+}
+
+.game-shell {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--line);
+}
+
+.hud {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #3f5f95;
+  border-radius: 8px;
+  background: var(--panel);
+  font-size: 15px;
+}
+
+#statusLabel {
+  color: var(--accent);
+}
+
+#pauseButton {
+  border: 1px solid #4da3ff;
+  background: linear-gradient(180deg, #1f78ff 0%, #0f56c6 100%);
+  color: #eef7ff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+#pauseButton:hover {
+  background: linear-gradient(180deg, #3c8dff 0%, #1b68db 100%);
+}
+
+#gameCanvas {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border: 2px solid #355f99;
+  border-radius: 8px;
+  background: #02050d;
+  display: block;
+}
+
+.help {
+  margin: 0;
+  color: #b8cfff;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .hud {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
