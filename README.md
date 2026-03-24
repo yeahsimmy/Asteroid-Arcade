@@ -35,6 +35,9 @@ Da das Projekt vollständig statisch ist, gibt es zwei einfache Wege:
 4. Speichern.
 5. Nach kurzer Zeit ist die Seite über die angezeigte GitHub-Pages-URL erreichbar.
 
+> **Wichtig:** Öffne für die Vorschau die **GitHub-Pages-URL** (z. B. `https://<user>.github.io/<repo>/`) und nicht die Datei-Ansicht auf `github.com`.  
+> In der normalen GitHub-Dateiansicht werden Spiel-Skripte/CSS nicht wie eine gehostete Website ausgeführt.
+
 ## Steuerung
 
 - **Pfeil links/rechts**: Schiff rotieren
