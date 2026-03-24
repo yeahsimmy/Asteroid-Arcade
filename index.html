@@ -4,34 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asteroid Arcade</title>
-    <style>
-      /* Fallback-Styling, falls style.css nicht geladen wird */
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #070b14;
-        color: #e5f2ff;
-      }
-      .game-shell {
-        max-width: 960px;
-        margin: 20px auto;
-        padding: 0 12px;
-      }
-      .hud {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-      }
-      #gameCanvas {
-        display: block;
-        width: 100%;
-        max-width: 900px;
-        height: auto;
-        border: 1px solid #355f99;
-        background: #02050d;
-      }
-    </style>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -53,16 +25,8 @@
       <p class="help">
         Steuerung: ←/→ rotieren, ↑ Schub, Leertaste schießen, Enter nach Game Over für Neustart
       </p>
-      <p class="help">
-        Falls die Seite ungestylt aussieht oder das Spiel nicht startet: bitte lokal über <code>index.html</code> /
-        <code>http://localhost:8080</code> oder über die GitHub-Pages-URL öffnen (nicht über die github.com
-        Dateiansicht).
-      </p>
     </main>
 
-    <script
-      src="script.js"
-      onerror="document.getElementById('statusLabel').textContent='Status: script.js konnte nicht geladen werden.';"
-    ></script>
+    <script src="script.js"></script>
   </body>
 </html>

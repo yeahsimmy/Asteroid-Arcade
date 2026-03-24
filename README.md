@@ -37,7 +37,6 @@ Da das Projekt vollständig statisch ist, gibt es zwei einfache Wege:
 
 > **Wichtig:** Öffne für die Vorschau die **GitHub-Pages-URL** (z. B. `https://<user>.github.io/<repo>/`) und nicht die Datei-Ansicht auf `github.com`.  
 > In der normalen GitHub-Dateiansicht werden Spiel-Skripte/CSS nicht wie eine gehostete Website ausgeführt.
-> Wenn du nur weißen Hintergrund/ungefiltertes HTML siehst, ist das fast immer genau dieses Problem.
 
 ## Steuerung
 
