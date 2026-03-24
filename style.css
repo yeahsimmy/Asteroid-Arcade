@@ -1,9 +1,11 @@
 :root {
-  --bg: #070b14;
-  --panel: #111a2f;
-  --line: #69f1d6;
-  --text: #e5f2ff;
-  --accent: #ffcf78;
+  color-scheme: dark;
+  --bg: #04050a;
+  --panel: #0e1322;
+  --line: #7fffd4;
+  --text: #e4f8ff;
+  --accent: #ffb347;
+  --danger: #ff7171;
 }
 
 * {
@@ -13,45 +15,43 @@
 body {
   margin: 0;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  background: radial-gradient(circle at 20% 20%, #141f40, transparent 32%),
-    radial-gradient(circle at 80% 10%, #27163f, transparent 28%),
+  display: grid;
+  place-items: center;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, #101735 0%, transparent 30%),
+    radial-gradient(circle at 80% 15%, #1a0f30 0%, transparent 25%),
     var(--bg);
   color: var(--text);
 }
 
 .game-shell {
-  width: 100%;
-  max-width: 960px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
+  width: min(95vw, 960px);
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
 }
 
 h1 {
   margin: 0;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: clamp(1.3rem, 3vw, 2rem);
   color: var(--line);
+  text-shadow: 0 0 8px #4df8ce55;
 }
 
 .hud {
-  width: 100%;
-  max-width: 900px;
+  width: min(95vw, 900px);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 10px 12px;
-  border: 1px solid #3f5f95;
-  border-radius: 8px;
-  background: var(--panel);
-  font-size: 15px;
+  gap: 1rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #335;
+  border-radius: 0.45rem;
+  background: color-mix(in srgb, var(--panel) 88%, #000 12%);
+  font-size: 0.98rem;
+  align-items: center;
 }
 
 #statusLabel {
@@ -62,29 +62,32 @@ h1 {
   border: 1px solid #4da3ff;
   background: linear-gradient(180deg, #1f78ff 0%, #0f56c6 100%);
   color: #eef7ff;
-  border-radius: 6px;
-  padding: 6px 12px;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.35rem;
   cursor: pointer;
+  font-size: 0.9rem;
 }
 
 #pauseButton:hover {
   background: linear-gradient(180deg, #3c8dff 0%, #1b68db 100%);
 }
 
-#gameCanvas {
-  width: 100%;
-  max-width: 900px;
+canvas {
+  width: min(95vw, 900px);
   height: auto;
-  border: 2px solid #355f99;
-  border-radius: 8px;
-  background: #02050d;
-  display: block;
+  border: 2px solid #38517d;
+  border-radius: 0.4rem;
+  background: #030509;
+  box-shadow:
+    0 0 0 1px #0a0f1e,
+    0 0 20px #4ad0ff22;
 }
 
 .help {
   margin: 0;
-  color: #b8cfff;
   text-align: center;
+  color: #b6d4ff;
+  font-size: 0.92rem;
 }
 
 @media (max-width: 700px) {
