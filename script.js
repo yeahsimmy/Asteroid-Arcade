@@ -50,6 +50,7 @@
   const scoreLabel = document.getElementById("scoreLabel");
   const livesLabel = document.getElementById("livesLabel");
   const statusLabel = document.getElementById("statusLabel");
+  const pauseButton = document.getElementById("pauseButton");
 
   const input = {
     left: false,
@@ -59,7 +60,7 @@
   };
 
   const game = {
-    state: "running", // running | gameover
+    state: "running", // running | paused | gameover
     score: 0,
     lives: CONFIG.gameplay.startingLives,
     timeScale: 1,
@@ -190,6 +191,7 @@
     game.particles = [];
 
     spawnWave(CONFIG.asteroid.spawnCount);
+    setPauseButtonLabel();
     setStatus("Status: Bereit");
     updateHud();
   }
@@ -229,6 +231,23 @@
 
     window.addEventListener("keydown", (event) => handle(true, event));
     window.addEventListener("keyup", (event) => handle(false, event));
+    pauseButton.addEventListener("click", togglePause);
+  }
+
+  function togglePause() {
+    if (game.state === "gameover") return;
+    game.state = game.state === "paused" ? "running" : "paused";
+
+    if (game.state === "paused") {
+      setStatus("Status: Pausiert");
+    } else {
+      setStatus(`Status: Welle ${game.wave}`);
+    }
+    setPauseButtonLabel();
+  }
+
+  function setPauseButtonLabel() {
+    pauseButton.textContent = game.state === "paused" ? "Fortsetzen" : "Pause";
   }
 
   // =============================
@@ -422,6 +441,9 @@
     if (game.state === "gameover") {
       drawGameOverOverlay();
     }
+    if (game.state === "paused") {
+      drawPauseOverlay();
+    }
   }
 
   function drawBackground() {
@@ -539,6 +561,16 @@
     ctx.fillStyle = "#9dd6ff";
     ctx.font = "18px 'Trebuchet MS', sans-serif";
     ctx.fillText("Drücke Enter für Neustart", CONFIG.world.width / 2, CONFIG.world.height / 2 + 70);
+  }
+
+  function drawPauseOverlay() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.45)";
+    ctx.fillRect(0, 0, CONFIG.world.width, CONFIG.world.height);
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#9dd6ff";
+    ctx.font = "bold 46px 'Trebuchet MS', sans-serif";
+    ctx.fillText("PAUSE", CONFIG.world.width / 2, CONFIG.world.height / 2);
   }
 
   // =============================

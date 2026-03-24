@@ -40,6 +40,7 @@ Da das Projekt vollständig statisch ist, gibt es zwei einfache Wege:
 - **Pfeil links/rechts**: Schiff rotieren
 - **Pfeil hoch**: Schub
 - **Leertaste**: Schießen
+- **Pause-Button**: Spiel pausieren / fortsetzen
 - **Enter** (bei Game Over): Neustart
 
 ## Projektstruktur

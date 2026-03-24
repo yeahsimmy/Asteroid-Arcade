@@ -51,10 +51,25 @@ h1 {
   border-radius: 0.45rem;
   background: color-mix(in srgb, var(--panel) 88%, #000 12%);
   font-size: 0.98rem;
+  align-items: center;
 }
 
 #statusLabel {
   color: var(--accent);
+}
+
+#pauseButton {
+  border: 1px solid #4da3ff;
+  background: linear-gradient(180deg, #1f78ff 0%, #0f56c6 100%);
+  color: #eef7ff;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+#pauseButton:hover {
+  background: linear-gradient(180deg, #3c8dff 0%, #1b68db 100%);
 }
 
 canvas {
